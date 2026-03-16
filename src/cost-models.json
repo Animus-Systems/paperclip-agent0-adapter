@@ -1,0 +1,44 @@
+[
+  {
+    "model": "claude-sonnet-4-5",
+    "inputCostPer1k": 0.003,
+    "outputCostPer1k": 0.015,
+    "notes": "Anthropic default"
+  },
+  {
+    "model": "claude-haiku-4-5",
+    "inputCostPer1k": 0.00025,
+    "outputCostPer1k": 0.00125,
+    "notes": "Utility model"
+  },
+  {
+    "model": "gpt-4.1",
+    "inputCostPer1k": 0.002,
+    "outputCostPer1k": 0.008,
+    "notes": "OpenAI"
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "inputCostPer1k": 0.0004,
+    "outputCostPer1k": 0.0016,
+    "notes": "OpenAI lite"
+  },
+  {
+    "model": "gemini-1.5-flash",
+    "inputCostPer1k": 0.000075,
+    "outputCostPer1k": 0.0003,
+    "notes": "Google"
+  },
+  {
+    "model": "gemini-2.0-flash",
+    "inputCostPer1k": 0.0001,
+    "outputCostPer1k": 0.0004,
+    "notes": "Google"
+  },
+  {
+    "model": "unknown",
+    "inputCostPer1k": 0.002,
+    "outputCostPer1k": 0.008,
+    "notes": "Safe default fallback"
+  }
+]

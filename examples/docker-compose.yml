@@ -1,0 +1,50 @@
+services:
+  agent-zero:
+    image: agent0ai/agent-zero
+    container_name: agent-zero
+    ports:
+      - '50001:80'
+    env_file:
+      - .env.a0
+    volumes:
+      - a0_data:/a0/usr
+    restart: unless-stopped
+
+  paperclip:
+    image: node:20-alpine
+    container_name: paperclip
+    command: npx paperclipai onboard --yes
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/paperclip
+    restart: unless-stopped
+
+  adapter:
+    build:
+      context: ..
+    container_name: paperclip-a0-adapter
+    ports:
+      - '4000:4000'
+    env_file:
+      - ../.env
+    volumes:
+      - adapter_data:/app/data
+    depends_on:
+      - agent-zero
+      - paperclip
+    restart: unless-stopped
+
+  postgres:
+    image: ankane/pgvector:v0.5.1
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  a0_data:
+  adapter_data:
+  postgres_data:

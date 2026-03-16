@@ -1,0 +1,14 @@
+services:
+  adapter:
+    build: .
+    container_name: paperclip-a0-adapter
+    ports:
+      - '4000:4000'
+    env_file:
+      - .env
+    volumes:
+      - adapter_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  adapter_data:

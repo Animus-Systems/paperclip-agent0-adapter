@@ -1,0 +1,10 @@
+{
+  "name": "CTO",
+  "role": "Backend engineering and DevOps",
+  "runtime": "http",
+  "heartbeat_url": "http://adapter:4000/heartbeat",
+  "heartbeat_auth_header": "X-Adapter-Secret",
+  "heartbeat_auth_value": "<your ADAPTER_SECRET>",
+  "budget_monthly_usd": 50,
+  "company_id": "your_company_id"
+}
