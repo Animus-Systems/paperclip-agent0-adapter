@@ -1,0 +1,1 @@
+# paperclip-agent0-adapter
