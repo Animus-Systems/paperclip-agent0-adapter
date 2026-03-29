@@ -38,7 +38,7 @@ const envSchema = z.object({
   BUDGET_WARN_THRESHOLD: z.coerce.number().nonnegative().default(2),
   BUDGET_BLOCK_AT_ZERO: booleanFromEnv.default(true),
   COST_LOG_FETCH_COUNT: z.coerce.number().int().positive().default(100),
-  DEFAULT_MODEL_FOR_COST: z.string().min(1).default('claude-sonnet-4-5'),
+  DEFAULT_MODEL_FOR_COST: z.string().min(1).default('minimax-m2.7'),
   DEFAULT_COMPANY_MISSION: z
     .string()
     .min(1)

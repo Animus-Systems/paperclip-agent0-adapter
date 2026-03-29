@@ -17,7 +17,7 @@ describe('config', () => {
       BUDGET_WARN_THRESHOLD: '2',
       BUDGET_BLOCK_AT_ZERO: 'false',
       COST_LOG_FETCH_COUNT: '25',
-      DEFAULT_MODEL_FOR_COST: 'claude-sonnet-4-5',
+      DEFAULT_MODEL_FOR_COST: 'minimax-m2.7',
       DEFAULT_COMPANY_MISSION: 'Mission',
       DEFAULT_PROJECT_GOAL: 'Goal',
       DEFAULT_AGENT_GOAL: 'Mandate',

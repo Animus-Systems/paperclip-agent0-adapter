@@ -49,7 +49,7 @@ describe('POST /heartbeat', () => {
     a0App.get('/api_log_get', (_request, response) => {
       response.status(200).json([
         {
-          content: "model='gpt-4.1-mini' usage: Usage(prompt_tokens=300, completion_tokens=100, total_tokens=400)"
+          content: "model='deepseek-v3.2' usage: Usage(prompt_tokens=300, completion_tokens=100, total_tokens=400)"
         }
       ]);
     });
@@ -82,7 +82,7 @@ describe('POST /heartbeat', () => {
       BUDGET_WARN_THRESHOLD: '2',
       BUDGET_BLOCK_AT_ZERO: 'true',
       COST_LOG_FETCH_COUNT: '25',
-      DEFAULT_MODEL_FOR_COST: 'claude-sonnet-4-5',
+      DEFAULT_MODEL_FOR_COST: 'minimax-m2.7',
       DEFAULT_COMPANY_MISSION: 'Default mission',
       DEFAULT_PROJECT_GOAL: 'Default project goal',
       DEFAULT_AGENT_GOAL: 'Default agent goal',
@@ -162,7 +162,7 @@ describe('POST /heartbeat', () => {
       BUDGET_WARN_THRESHOLD: '2',
       BUDGET_BLOCK_AT_ZERO: 'true',
       COST_LOG_FETCH_COUNT: '25',
-      DEFAULT_MODEL_FOR_COST: 'claude-sonnet-4-5',
+      DEFAULT_MODEL_FOR_COST: 'minimax-m2.7',
       DEFAULT_COMPANY_MISSION: 'Default mission',
       DEFAULT_PROJECT_GOAL: 'Default project goal',
       DEFAULT_AGENT_GOAL: 'Default agent goal',

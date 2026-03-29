@@ -1,44 +1,56 @@
 [
   {
-    "model": "claude-sonnet-4-5",
-    "inputCostPer1k": 0.003,
-    "outputCostPer1k": 0.015,
-    "notes": "Anthropic default"
+    "model": "minimax-m2.7",
+    "inputCostPer1k": 0.0003,
+    "outputCostPer1k": 0.0012,
+    "notes": "MiniMax latest via OpenRouter"
   },
   {
-    "model": "claude-haiku-4-5",
-    "inputCostPer1k": 0.00025,
-    "outputCostPer1k": 0.00125,
-    "notes": "Utility model"
+    "model": "minimax-m2.5",
+    "inputCostPer1k": 0.0003,
+    "outputCostPer1k": 0.0012,
+    "notes": "MiniMax via OpenRouter"
   },
   {
-    "model": "gpt-4.1",
-    "inputCostPer1k": 0.002,
-    "outputCostPer1k": 0.008,
-    "notes": "OpenAI"
+    "model": "deepseek-v3.2",
+    "inputCostPer1k": 0.00026,
+    "outputCostPer1k": 0.00038,
+    "notes": "DeepSeek via OpenRouter"
   },
   {
-    "model": "gpt-4.1-mini",
-    "inputCostPer1k": 0.0004,
-    "outputCostPer1k": 0.0016,
-    "notes": "OpenAI lite"
+    "model": "deepseek-r1",
+    "inputCostPer1k": 0.0007,
+    "outputCostPer1k": 0.0025,
+    "notes": "DeepSeek reasoning via OpenRouter"
   },
   {
-    "model": "gemini-1.5-flash",
-    "inputCostPer1k": 0.000075,
-    "outputCostPer1k": 0.0003,
-    "notes": "Google"
+    "model": "gemini-2.5-flash",
+    "inputCostPer1k": 0.0003,
+    "outputCostPer1k": 0.0025,
+    "notes": "Google via OpenRouter"
   },
   {
-    "model": "gemini-2.0-flash",
+    "model": "gemini-2.5-flash-lite",
     "inputCostPer1k": 0.0001,
     "outputCostPer1k": 0.0004,
-    "notes": "Google"
+    "notes": "Google lite via OpenRouter"
+  },
+  {
+    "model": "llama-4-maverick",
+    "inputCostPer1k": 0.00027,
+    "outputCostPer1k": 0.00085,
+    "notes": "Meta via OpenRouter"
+  },
+  {
+    "model": "qwen3.5-plus",
+    "inputCostPer1k": 0.00026,
+    "outputCostPer1k": 0.00156,
+    "notes": "Qwen via OpenRouter"
   },
   {
     "model": "unknown",
-    "inputCostPer1k": 0.002,
-    "outputCostPer1k": 0.008,
-    "notes": "Safe default fallback"
+    "inputCostPer1k": 0.0003,
+    "outputCostPer1k": 0.0012,
+    "notes": "Safe default fallback (minimax rates)"
   }
 ]
