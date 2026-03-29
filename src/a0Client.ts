@@ -52,7 +52,7 @@ export class A0Client {
     };
 
     const response = await this.requestJson<A0MessageResponse>(
-      '/api_message',
+      'api_message',
       {
         method: 'POST',
         body: JSON.stringify(body)
@@ -73,7 +73,7 @@ export class A0Client {
       length: String(length)
     });
 
-    const response = await this.requestJson<unknown>(`/api_log_get?${query.toString()}`, { method: 'GET' }, false);
+    const response = await this.requestJson<unknown>(`api_log_get?${query.toString()}`, { method: 'GET' }, false);
 
     if (Array.isArray(response)) {
       return response as A0LogEntry[];
@@ -101,7 +101,7 @@ export class A0Client {
   }
 
   public async terminateChat(contextId: string): Promise<void> {
-    await this.requestJson('/api_terminate_chat', {
+    await this.requestJson('api_terminate_chat', {
       method: 'POST',
       body: JSON.stringify({ context_id: contextId })
     });
@@ -109,7 +109,7 @@ export class A0Client {
 
   public async healthCheck(): Promise<boolean> {
     try {
-      const url = new URL('/api_health', this.config.A0_BASE_URL);
+      const url = new URL('api_health', this.config.A0_BASE_URL);
       const response = await this.fetchFn(url, {
         method: 'GET',
         headers: {
@@ -148,7 +148,16 @@ export class A0Client {
       });
 
       const text = await response.text();
-      const json = text ? (JSON.parse(text) as T) : ({} as T);
+      let json: T;
+      try {
+        json = text ? (JSON.parse(text) as T) : ({} as T);
+      } catch {
+        // Non-JSON response (e.g. "Internal Server Error")
+        throw new A0ClientError(
+          `A0 returned non-JSON response (${response.status}): ${text.substring(0, 200)}`,
+          response.status
+        );
+      }
 
       if (response.ok) {
         return json;

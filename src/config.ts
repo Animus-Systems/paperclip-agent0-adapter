@@ -31,9 +31,9 @@ const envSchema = z.object({
   A0_TIMEOUT_MS: z.coerce.number().int().positive().default(360000),
   A0_DEFAULT_CONTEXT_LIFETIME_HOURS: z.coerce.number().int().positive().default(48),
   A0_RETRY_DELAY_MS: z.coerce.number().int().nonnegative().default(10000),
-  ADAPTER_SECRET: z.string().min(1),
+  ADAPTER_SECRET: z.string().min(1).default('none'),
   CONTEXT_DB_PATH: z.string().min(1).default('./data/contexts.sqlite'),
-  PAPERCLIP_WEBHOOK_SECRET: z.string().min(1),
+  PAPERCLIP_WEBHOOK_SECRET: z.string().default(''),
   PAPERCLIP_CALLBACK_RETRY_BASE_MS: z.coerce.number().int().nonnegative().default(2000),
   BUDGET_WARN_THRESHOLD: z.coerce.number().nonnegative().default(2),
   BUDGET_BLOCK_AT_ZERO: booleanFromEnv.default(true),
@@ -51,6 +51,8 @@ const envSchema = z.object({
     .string()
     .min(1)
     .default('Execute the assigned work autonomously.'),
+  PAPERCLIP_URL: z.string().default('http://server:3100'),
+  PAPERCLIP_API_KEY: z.string().default(''),
   LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']).default('info')
 });
 
